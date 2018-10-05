@@ -1,15 +1,10 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
-version: 2.1
-commands:
-  sayhello:
-    description: "A very simple command for demonstration purposes"
-    parameters:
-      to:
-        type: string
-        default: "Hello World"
+version: 2
+jobs:
+  build:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: jungleran/drupal:8.6.0-beta2
     steps:
-      - run: echo << parameters.to >>
-
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
+      
+ 
